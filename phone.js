@@ -15,7 +15,7 @@ console.log(phone.length);
    }
   
 
-//    const phoneFix = phone.slice(0, 12);
+   const phoneFix = phone.slice(0, 12);
  
     loadObjData(phoneFix, isShowAll)
 
@@ -52,7 +52,6 @@ const loadObjData = (obj, isShowAll) =>{
          spinnerWork(false);
 
          console.log('isShowAllValue is', isShowAll);
- 
 
 }
 
