@@ -1,4 +1,4 @@
-const loadPhone = async(values) => {
+const loadPhone = async(values, isShowAll) => {
     const response = await   fetch(`https://openapi.programming-hero.com/api/phones?search=${values}`)
     const data = await response.json();
      
@@ -13,16 +13,18 @@ console.log(phone.length);
     const collBtnId = document.getElementById('showAll-btn');
     collBtnId.classList.add('hidden');
    }
-    const phoneFix = phone.slice(0, 12);
-    console.log(phoneFix);
-    loadObjData(phoneFix)
+  
+
+//    const phoneFix = phone.slice(0, 12);
+ 
+    loadObjData(phoneFix, isShowAll)
 
      
       
 }
 
 
-const loadObjData = (obj) =>{
+const loadObjData = (obj, isShowAll) =>{
     const collPerant = document.getElementById('phone-container');
     collPerant.innerHTML = '';
          obj.forEach(element => {
@@ -49,13 +51,16 @@ const loadObjData = (obj) =>{
          });
          spinnerWork(false);
 
+         console.log('isShowAllValue is', isShowAll);
+ 
+
 }
 
-const btnClicked = () =>{
+const btnClicked = (isShowAll) =>{
       const collPerantId = document.getElementById('value-perant');
       const  innerValue = collPerantId.value ;
       spinnerWork(true);
-      loadPhone(innerValue);
+      loadPhone(innerValue, isShowAll);
     
 
 }
@@ -68,6 +73,11 @@ const spinnerWork =(valuese)=>{
    else{
     collSpinnerId.classList.add('hidden')
    }
+}
+
+
+const clickShowAll =()=>{
+    btnClicked(true);
 }
  
 loadPhone();
