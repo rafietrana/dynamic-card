@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Hunting Phone Api</title>
+  </head>
+  <body>
+    <header></header>
+    <main class="w-5/6 mx-auto">
+      <section>
+        <input
+          id="value-perant"
+          class="outline-none m-5 px-5 py-3 rounded-lg border"
+          type="text"
+          placeholder="Search Products "
+        />
+        <button onclick="btnClicked()" class="btn btn-secondary ">
+          Secondary
+        </button>
+      </section>
+
+      <section>
+        <!-- spinner area start -->
+        <div id="spinner" class="border text-center min-h-screen flex justify-center hidden">
+            <span class="loading loading-spinner loading-lg"></span>
+        </div>
+        <!-- spinner area end -->
+        <div
+          id="phone-container"
+          class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-5 m-7"
+        ></div>
+        <!-- show all buttons -->
+        <div>
+           
+          <button id="showAll-btn" class="btn btn-outline btn-primary m-5 px-5 py-3 hidden">Primary</button>
+        </div>
+      </section>
+    </main>
+    <footer></footer>
+    <script src="phone.js"></script>
+  </body>
+</html>
