@@ -80,6 +80,8 @@ const showPhoneInfor =(datas) =>{
         collPerantDiv.innerHTML = `
         <img src="${datas.image}" alt="">
         <h1><span class='font-bold'>Storage:</span>${datas.mainFeatures.storage}</h1>
+ 
+        <h1><span class='font-bold'>GPS:</span>${   datas.others?.GPS ? datas.others.GPS : 'No Gps Found'}</h1>
         `
         my_modal_5.showModal();
         console.log('datas is',datas);
