@@ -1,4 +1,4 @@
-const loadPhone = async(values, isShowAll) => {
+const loadPhone = async(values ='13', isShowAll) => {
     const response = await   fetch(`https://openapi.programming-hero.com/api/phones?search=${values}`)
     const data = await response.json();
      
@@ -41,7 +41,7 @@ const loadObjData = (obj, isShowAll) =>{
             }</h2>
             <p>If a dog chews shoes whose shoes does he choose?</p>
             <div class="card-actions">
-              <button onclick =" showClicked('${element.slug}')" class="btn btn-primary">show Details</button>
+              <button onclick =" showClicked('${element.slug}');" class="btn btn-primary">show Details</button>
             </div>
           </div>
             `;
@@ -68,8 +68,21 @@ const showClicked = async(id) =>{
       //  data obj load
       const res =await fetch(`https://openapi.programming-hero.com/api/phone/${id}`)
       const data = await res.json();
-      console.log(data);
+      const phone = data.data;
+      showPhoneInfor(phone);
     
+}
+
+const showPhoneInfor =(datas) =>{
+        const collTitleId = document.getElementById('title-id');
+        collTitleId.innerText = datas.name;
+        const collPerantDiv = document.getElementById('parent-div');
+        collPerantDiv.innerHTML = `
+        <img src="${datas.image}" alt="">
+        <h1><span class='font-bold'>Storage:</span>${datas.mainFeatures.storage}</h1>
+        `
+        my_modal_5.showModal();
+        console.log('datas is',datas);
 }
 
 

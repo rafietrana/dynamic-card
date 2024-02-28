@@ -46,14 +46,18 @@
 
       <!-- modal area start -->
  
-<button class="btn" onclick="my_modal_5.showModal()">open modal</button>
+
 <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
   <div class="modal-box">
-    <h3 class="font-bold text-lg">Hello!</h3>
-    <p class="py-4">Press ESC key or click the button below to close</p>
-    <div class="modal-action">
+    <h3 id="title-id" class="font-bold text-lg"></h3>
+    <p class="py-4"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, accusamus!</p>
+    <div class="modal-action flex flex-col justify-start space-y-5">
+      <div id="parent-div" class="space-y-5">
+        <img src="" alt="">
+      </div>
       <form method="dialog">
-        <!-- if there is a button in form, it will close the modal -->
+
+        
         <button class="btn">Close</button>
       </form>
     </div>
