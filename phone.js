@@ -14,8 +14,8 @@ console.log(phone.length);
     collBtnId.classList.add('hidden');
    }
   
-
    const phoneFix = phone.slice(0, 12);
+   
  
     loadObjData(phoneFix, isShowAll)
 
@@ -41,7 +41,7 @@ const loadObjData = (obj, isShowAll) =>{
             }</h2>
             <p>If a dog chews shoes whose shoes does he choose?</p>
             <div class="card-actions">
-              <button class="btn btn-primary">Buy Now</button>
+              <button onclick =" showClicked('${element.slug}')" class="btn btn-primary">show Details</button>
             </div>
           </div>
             `;
@@ -49,11 +49,29 @@ const loadObjData = (obj, isShowAll) =>{
 
 
          });
+
+
+         
+         
          spinnerWork(false);
+
+
+
+  
 
          console.log('isShowAllValue is', isShowAll);
 
 }
+
+const showClicked = async(id) =>{
+       console.log('different id is', id);
+      //  data obj load
+      const res =await fetch(`https://openapi.programming-hero.com/api/phone/${id}`)
+      const data = await res.json();
+      console.log(data);
+    
+}
+
 
 const btnClicked = (isShowAll) =>{
       const collPerantId = document.getElementById('value-perant');
